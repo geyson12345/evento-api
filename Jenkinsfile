@@ -3,7 +3,7 @@ pipeline{
         #SCM Checkout: Clonar o código-fonte do repositório GitHub.
             stage('SCM Chekout') {
                 steps {
-                    git branch: 'main', credentialsId: 'jk-github-token', url: 'https://github.com/geyson12345/evento-api.git'
+                    git branch: 'main', credentialsId: 'jk-github-token', url: 'git@github.com:geyson12345/evento-api.git'
                 }
             }
 
