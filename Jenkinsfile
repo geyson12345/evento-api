@@ -20,12 +20,12 @@ pipeline{
             }
         }
 
-//         #Push Image: Publicar a imagem Docker construída no DockerHub.
-//         stage('Push to Docker Hub') {
-//             steps {
-//                 sh 'docker push geyson12345/webapp'
-//             }
-//         }
+        #Push Image: Publicar a imagem Docker construída no DockerHub.
+        stage('Push to Docker Hub') {
+            steps {
+                sh 'docker push geyson12345/webapp'
+            }
+        }
 
 
 
