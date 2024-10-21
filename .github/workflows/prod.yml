@@ -25,5 +25,3 @@ jobs:
                  run: docker build -t  geyson12345/api-front .
                - name: Push image docker
                  run: docker push geyson12345/api-front
-
-
