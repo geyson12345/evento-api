@@ -9,7 +9,7 @@ public class MensagemTexto {
     @GetMapping("/hello")
     public String hello(){
          String msg= "Criando sua pepilene usando Jenkins com Git e Docke e";
-         String parte = "Deploy no EC2 - Geyson ";
+         String parte = "Deploy no EC2 - Geyson - teste da aplicação !!!";
         return msg + "  " + parte;
     }
 
