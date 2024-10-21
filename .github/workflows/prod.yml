@@ -15,9 +15,8 @@ jobs:
                  with:
                     distribution: 'temurin'
                     java-version: '17'
-               - name: Build do projeto
+               - name: Build do projeto api-front - EC2
                  run: mvn clean install -DskipTests
-
                - name: Login no docker Hub
                  run: docker login -u ${{secrets.DOCKERHUB_CREDENTIALS_USR}} -p ${{secrets.DOCKERHUB_CREDENTIALS_PSW}}
                - name: Build docker image
