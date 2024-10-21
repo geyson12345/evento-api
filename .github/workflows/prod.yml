@@ -5,12 +5,11 @@ on:
     branches:
       - main
 jobs:
-    check-application:
+    build:
         runs-on: ubuntu-latest
         steps:
                - name: Checkout code
                  uses: actions/checkout@v3
-
                - name: Setup Java
                  uses: actions/setup-java@v3
                  with:
@@ -19,9 +18,9 @@ jobs:
                - name: Build do projeto
                  run: mvn clean install -DskipTests
 
-#               - name: Login no docker Hub
-#                 run: docker login -u ${{secrets.DOCKERHUB_CREDENTIALS_USR}} -p ${{secrets.DOCKERHUB_CREDENTIALS_PSW}}
-#               - name: Build docker image
-#                 run: docker build -t  geyson12345/api-front .
-#               - name: Push image docker
-#                 run: docker push geyson12345/api-front
+               - name: Login no docker Hub
+                 run: docker login -u ${{secrets.DOCKERHUB_CREDENTIALS_USR}} -p ${{secrets.DOCKERHUB_CREDENTIALS_PSW}}
+               - name: Build docker image
+                 run: docker build -t  geyson12345/api-front .
+               - name: Push image docker
+                 run: docker push geyson12345/api-front
