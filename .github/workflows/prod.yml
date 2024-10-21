@@ -23,3 +23,11 @@ jobs:
                  run: docker build -t  geyson12345/api-front .
                - name: Push image docker
                  run: docker push geyson12345/api-front
+    deploy:
+      needs: build
+      runs-on: self-hosted
+      steps:
+        - name: Pull image from docker hub
+          run: docker pull geyson12345/api-front
+        - name: Run docker container
+          run: docker run -d --name app-serv-front -p 8080 geyson12345/api-front
